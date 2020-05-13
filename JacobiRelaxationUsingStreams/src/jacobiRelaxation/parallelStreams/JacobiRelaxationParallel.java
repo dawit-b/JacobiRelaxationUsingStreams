@@ -10,6 +10,7 @@ public class JacobiRelaxationParallel {
 		float [][] A = new float [n][n];
 		float [][] B = new float [n][n];
 		double tolerance = 0.1;
+		
 		// initializing array A
 		A = initalizeArray(A);
 		
@@ -19,12 +20,17 @@ public class JacobiRelaxationParallel {
 		
 		
 	}
-	
+	/*
+	 * converts a 2D array into a stream
+	 */
 	public static IntStream arrayToStream(int[][] array) {
 		IntStream arrayStream = Arrays.stream(array).flatMapToInt(a -> Arrays.stream(a));
 		return arrayStream;
 	}
 	
+	/*
+	 * initializes an array with all margins 10 and 0 inside
+	 */
 	public static float[][] initalizeArray(float[][] A){
 		int length = A.length;
 		for (int i = 1; i < length; i++) {

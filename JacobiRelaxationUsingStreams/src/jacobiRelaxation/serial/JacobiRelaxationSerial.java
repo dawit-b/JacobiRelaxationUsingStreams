@@ -60,7 +60,7 @@ public class JacobiRelaxationSerial {
 
 	}
 	/* prints 2D array
-	 * @param int array
+	 * @param 2D float array
 	 * 
 	 */
 	public static void printArray(float [][] array) {
