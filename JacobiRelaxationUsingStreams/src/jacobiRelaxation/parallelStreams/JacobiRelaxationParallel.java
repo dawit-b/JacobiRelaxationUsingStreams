@@ -14,13 +14,11 @@ public class JacobiRelaxationParallel {
 	static double change = 0;
 	public static void main(String[] args) {
 		
-		
 		double tolerance = 0.1;
 		
 		// initializing array A
 		A = initalizeArray(A);
-		//float[] X = flatArray(A);
-		//float[] Y = flatArray(A);
+		
 		int counter = 0;
 		Date start_time = new Date();
 
@@ -82,29 +80,6 @@ public class JacobiRelaxationParallel {
 		return A;
 		
 	}
-	/*
-	 * converts 2D array to 1D array with all elements
-	 */
-	public static float[] flatArray(float[][] A) {
-		float [] B = new float[A.length*A.length];
-		int index = 0;
-		for(int i =0; i<A.length; i++) {
-			for(int j=0; j<A.length; j++) {
-				B[index++] =  A[i][j];
-			}
-		}
-		return B;
-	}
-	
-	public static void printArray(float [][] array) {
-		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array.length; j++) {
-				System.out.print(array[i][j] + "  ");
-			}
-			System.out.println();
-			
-		}
-		System.out.println("==================================================================");
-	}
+
 
 }
