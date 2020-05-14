@@ -24,7 +24,7 @@ public class JacobiRelaxationParallel {
 
 		do {
 			counter++;
-			int iter = IntStream.range(1, n-1)//.parallel()
+			int iter = IntStream.range(1, n-1).parallel()
 			.map(i -> {
 				for(int j=1; j< n-1; j++) {
 					B[i][j] = (A[i-1][j] + A[i+1][j] + A[i][j-1] + A[i][j+1]) / 4;
@@ -33,7 +33,7 @@ public class JacobiRelaxationParallel {
 				
 			}).sum();
 			
-			OptionalDouble diff = IntStream.range(1, n-1)//.parallel()
+			OptionalDouble diff = IntStream.range(1, n-1).parallel()
 			.mapToDouble(i -> {
 				double maxChange = 0;
 				for( int k=1; k<n-1; k++) {
@@ -50,15 +50,8 @@ public class JacobiRelaxationParallel {
 		
 		Date end_time = new Date();
 		System.out.println("Number of iteration: " + counter);
-		System.out.println("Serial Stream Time Elapsed: " + (end_time.getTime() - start_time.getTime()));
+		System.out.println("Parallel Stream Time Elapsed: " + (end_time.getTime() - start_time.getTime()));
 		
-	}
-	/*
-	 * converts a 2D array into a stream
-	 */
-	public static IntStream arrayToStream(int[][] array) {
-		IntStream arrayStream = Arrays.stream(array).flatMapToInt(a -> Arrays.stream(a));
-		return arrayStream;
 	}
 	
 	/*
