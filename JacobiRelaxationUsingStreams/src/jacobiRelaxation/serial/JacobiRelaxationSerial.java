@@ -57,22 +57,7 @@ public class JacobiRelaxationSerial {
 		
 		Date end_time = new Date();
 		System.out.println("Number of iteration: " + counter);
-		System.out.println("Sequential time elapsed: " + (end_time.getTime() - start_time.getTime()));
+		System.out.println("Sequential code time elapsed: " + (end_time.getTime() - start_time.getTime()));
 
 	}
-	/* prints 2D array
-	 * @param 2D float array
-	 * 
-	 */
-	public static void printArray(float [][] array) {
-		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array.length; j++) {
-				System.out.print(array[i][j] + "  ");
-			}
-			System.out.println();
-			
-		}
-		System.out.println("==================================================================");
-	}
-
 }
